@@ -1,0 +1,65 @@
+<mat-toolbar class="header-container shadow-md w-full">
+  <div class="header-content max-w-7xl mx-auto w-full">
+    <button mat-icon-button (click)="toggleSidebar()" class="mr-2">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="flex items-center">
+      <img src="assets/ambulancia.png" 
+     alt="Logo Ambulancia" 
+     class="h-10 mr-3 rounded-full">
+<span class="text-xl font-bold text-white">AmbuProject</span>
+    </div>
+    <span class="flex-grow"></span>
+    <div class="flex items-center gap-2">
+      <button mat-icon-button class="text-white">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-icon-button class="text-white">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container class="min-h-screen">
+  <mat-sidenav 
+    [(opened)]="sidebarOpen" 
+    mode="side" 
+    class="w-64 shadow-lg"
+    [fixedInViewport]="isMobile"
+    [fixedTopGap]="64"
+  >
+    <div class="p-4">
+      <div class="flex items-center mb-6">
+        <mat-icon class="mr-2 text-blue-500">dashboard</mat-icon>
+        <span class="font-medium">Dashboard</span>
+      </div>
+      
+      <mat-nav-list>
+        <a mat-list-item routerLink="/" routerLinkActive="bg-blue-50 text-blue-600">
+          <mat-icon class="mr-2">home</mat-icon>
+          Inicio
+        </a>
+        
+        <a mat-list-item routerLink="/products" routerLinkActive="bg-blue-50 text-blue-600">
+          <mat-icon class="mr-2">shopping_bag</mat-icon>
+          Productos
+        </a>
+        
+        <a mat-list-item routerLink="/customers" routerLinkActive="bg-blue-50 text-blue-600">
+          <mat-icon class="mr-2">people</mat-icon>
+          Clientes
+        </a>
+        
+        <a mat-list-item routerLink="/settings" routerLinkActive="bg-blue-50 text-blue-600">
+          <mat-icon class="mr-2">settings</mat-icon>
+          Configuración
+        </a>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+  
+  <mat-sidenav-content class="p-6">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
