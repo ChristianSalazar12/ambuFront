@@ -1,3 +1,34 @@
+mat-sidenav {
+  border-radius: 0 !important;
+}
+
+mat-sidenav-container {
+  border-radius: 0 !important;
+}
+
+.mat-mdc-sidenav {
+  border-radius: 0 !important;
+}
+
+mat-sidenav,
+mat-sidenav mat-nav-list,
+mat-sidenav mat-list-item,
+mat-sidenav span,
+mat-sidenav a {
+  color: white !important;
+}
+
+/* Estilo para los iconos */
+mat-sidenav mat-icon {
+  color: white !important;
+}
+
+/* Mantiene el color azul para los items activos */
+mat-sidenav .routerLinkActive {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  color: #3B82F6 !important;
+}
+
 .header-container {
   background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
   height: 80px;
@@ -12,9 +43,11 @@
   align-items: center;
   height: 100%;
 }
+
 mat-sidenav-container {
   flex: 1;
-  min-height: calc(100vh - 144px); /* Resta altura del header + footer */
+  min-height: calc(100vh - 144px);
+  /* Resta altura del header + footer */
 }
 
 mat-sidenav {
@@ -35,11 +68,11 @@ mat-sidenav .mat-list-item {
 }
 
 mat-sidenav .mat-list-item:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgb(255, 255, 255) !important;
 }
 
 .router-link-active {
-  background: rgba(59, 130, 246, 0.2) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
   color: #3B82F6 !important;
   border-left: 4px solid #3B82F6;
 }
@@ -47,4 +80,117 @@ mat-sidenav .mat-list-item:hover {
 /* Iconos activos */
 .router-link-active mat-icon {
   color: #3B82F6;
+}
+
+/* Estilos para el contenedor principal del sidenav */
+mat-sidenav-container {
+  flex: 1;
+  min-height: calc(100vh - 80px);
+  /* Resta solo la altura del header */
+  background: #f8fafc;
+  /* Fondo claro para el área de contenido */
+}
+
+/* Estilos para el sidenav */
+mat-sidenav {
+  background: linear-gradient(180deg, #1E3A8A 0%, #1E40AF 100%);
+  width: 280px;
+  border-right: none;
+  box-shadow: 4px 0 6px -1px rgba(0, 0, 0, 0.1);
+  /* position: relative; */
+  z-index: 10;
+}
+
+/* Estilos para los elementos del menú */
+mat-sidenav .mat-list-item {
+  color: #E2E8F0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 12px 24px;
+  margin: 4px 8px;
+  border-radius: 8px;
+}
+
+/* Efecto hover para los items */
+mat-sidenav .mat-list-item:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateX(4px);
+}
+
+/* Estilo para el item activo */
+.router-link-active {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  border-left: 4px solid #3B82F6;
+}
+
+/* Iconos */
+mat-sidenav mat-icon {
+  margin-right: 12px;
+  font-size: 1.2rem;
+  width: 24px;
+  height: 24px;
+  color: #93C5FD;
+}
+
+/* Iconos activos */
+.router-link-active mat-icon {
+  color: #3B82F6;
+}
+
+/* Estilo para el encabezado del sidenav (si existe) */
+.sidenav-header {
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.sidenav-header img {
+  max-width: 80px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidenav-header h3 {
+  color: white;
+  margin: 8px 0 4px;
+  font-size: 1.1rem;
+}
+
+.sidenav-header p {
+  color: #E2E8F0;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Estilo para el footer del sidenav (si existe) */
+.sidenav-footer {
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Separadores */
+.mat-divider {
+  border-top-color: rgba(255, 255, 255, 0.1);
+  margin: 8px 16px;
+}
+
+/* Submenús (si aplica) */
+.submenu-item {
+  padding-left: 48px !important;
+  font-size: 0.85rem !important;
+}
+
+/* Efecto de transición al abrir/cerrar */
+mat-sidenav {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
